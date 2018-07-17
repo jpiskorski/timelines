@@ -52,14 +52,14 @@ public abstract class Feature {
       *  
       * @param name class name which implements the feature
       * 
-      * @return a handle to the created instance of a feature 
+      * @return a handle to the created instance of a feature  
       */
     
      public static Feature createInstance(String name)
       { Feature f = null;
         if(name!=null)
           { try
-              { Class c = Thread.currentThread().getContextClassLoader().loadClass("it.jrc.osint.extract.timelines.feature." + name);         
+              { Class c = Thread.currentThread().getContextClassLoader().loadClass("it.jrc.osint.extract.timelines.features." + name);         
                 f = (Feature)c.newInstance();
                 // default name = class name               
                 f.setName(c.getName());                

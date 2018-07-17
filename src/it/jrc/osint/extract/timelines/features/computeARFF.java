@@ -70,6 +70,7 @@ public class computeARFF {
 			result.append(EOL);
 			//result.append("@attribute\tleft_guid\tstring").append(EOL);
 			//result.append("@attribute\tright_guid\tstring").append(EOL);
+			result.append("@attribute\tTIMELINE-ID\tstring").append(EOL);
 			for (int i = 0; i < numFeatures; i++) {
 				result.append("@attribute");
 				result.append("\t");
@@ -78,14 +79,14 @@ public class computeARFF {
 				result.append(fPool.getFeature(i).getFeatureType());
 				result.append(EOL);
 			}
-			result.append("@attribute\tentity-in-event-participation\t{true,false}");
+			result.append("@attribute\tentity-in-event-participation\t{true,false,discard}");
 			result.append(EOL);
 			result.append(EOL);
 			result.append("@data");
 			result.append(EOL);
 			// iterate over all annotated data (timeline items)
 			int count = 0;
-			for(int i=0; i<numTimelineItems; i++)
+			for(int i=1; i<numTimelineItems; i++)
 			//for (String ePair : eventPairs) 
 			  { StringTokenizer st = new StringTokenizer(annotatedData.get(i), "\t");
 				if (st.countTokens() != 6) 
@@ -105,6 +106,8 @@ public class computeARFF {
 					continue;
 				}
 				// iterate over all features in the pool
+				result.append(ID);
+				result.append(",");
 				for (int k = 0; k < numFeatures; k++) { // get the feature
 					Feature f = fPool.getFeature(k);
 					// compute

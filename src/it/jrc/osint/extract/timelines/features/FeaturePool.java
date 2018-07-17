@@ -118,9 +118,13 @@ private Feature[] features;
 		         Properties newProps = Utils.getPropertiesStartingWithPrefix(configuration, configName + ".");
 		         System.out.println("Properties for the feature: " + newProps);
                  newService.initialize(newProps);
-                 newService.setName(configName);                 
+                 System.out.println("X1");
+                 newService.setName(configName);
+                 System.out.println("X2");
                  pool.features[i] = newService;
+                 System.out.println("X3");
                  pool.nameToFeature.put(configName,newService);
+                 System.out.println("X4");
                  i++;
                }
            catch(Exception e)
