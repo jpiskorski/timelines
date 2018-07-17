@@ -1,0 +1,15 @@
+
+%%
+%% List of features to use (for creation of ARFF files)
+%%
+%% syntax: comma-separated list of items in the format: classNameOfTheFeature(configName1:configName2: ... :configNameN)
+%%
+%% For each feature and configName (has to be UNIQUE) a different instance of the feature will be created.
+%% For the initialization of the specific version (which will be named "configName") of the given feature 
+%% only properties with an initial prefix "configName." will be considered.
+%%
+
+FEATURES=MapValueOfTargetEntityParticipation(BASIC:BASIC-2)
+
+%% configuration for MapValueOfTargetEntityParticipation  features for HypernymDistance feature
+%% no parameters yet

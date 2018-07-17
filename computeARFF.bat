@@ -1,0 +1,2 @@
+
+java -Dlog4j.configuration=file:log4j.properties -Xmx10240m -classpath .\bin;E:\commons\it.jrc.emm.commons\bin;.\lib\corleone.jar;.\lib\express.jar;.\lib\stanford-postagger-3.8.0.jar;.\lib\log4j-1.2.16.jar;.\lib\Timex.jar it.jrc.osint.extract.timelines.features.computeARFF %1 %2 %3 %4
